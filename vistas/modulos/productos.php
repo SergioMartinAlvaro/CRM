@@ -141,7 +141,7 @@
 MODAL AGREGAR USUARIO
 ======================================-->
 
-<div id="modalAgregarUsuario" class="modal fade" role="dialog">
+<div id="modalAgregarProducto" class="modal fade" role="dialog">
 
     <div class="modal-dialog">
 
@@ -157,7 +157,7 @@ MODAL AGREGAR USUARIO
 
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-                    <h4 class="modal-title">Agregar usuario</h4>
+                    <h4 class="modal-title">Agregar producto</h4>
 
                 </div>
 
@@ -169,59 +169,45 @@ MODAL AGREGAR USUARIO
 
                     <div class="box-body">
 
-                        <!-- ENTRADA PARA EL NOMBRE -->
+                        <!-- ENTRADA PARA EL CODIGO -->
 
                         <div class="form-group">
 
                             <div class="input-group">
 
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <span class="input-group-addon"><i class="fa fa-code"></i></span>
 
-                                <input type="text" class="form-control input-lg" name="nuevoNombre" placeholder="Ingresar nombre" required>
+                                <input type="text" class="form-control input-lg" name="nuevoCodigo" placeholder="Ingresar código" required>
 
                             </div>
 
                         </div>
 
-                        <!-- ENTRADA PARA EL USUARIO -->
+                        <!-- ENTRADA PARA LA DESCRIPCION -->
 
                         <div class="form-group">
 
                             <div class="input-group">
 
-                                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                                <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span>
 
-                                <input type="text" class="form-control input-lg" name="nuevoUsuario" placeholder="Ingresar usuario" required>
+                                <input type="text" class="form-control input-lg" name="nuevaDescripcion" placeholder="Ingresar descripcion" required>
 
                             </div>
 
                         </div>
 
-                        <!-- ENTRADA PARA LA CONTRASEÑA -->
+                        <!-- ENTRADA PARA SELECCIONAR CATEGORÍA-->
 
                         <div class="form-group">
 
                             <div class="input-group">
 
-                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                <span class="input-group-addon"><i class="fa fa-th"></i></span>
 
-                                <input type="password" class="form-control input-lg" name="nuevoPassword" placeholder="Ingresar contraseña" required>
+                                <select class="form-control input-lg" name="nuevaCategoria">
 
-                            </div>
-
-                        </div>
-
-                        <!-- ENTRADA PARA SELECCIONAR SU PERFIL -->
-
-                        <div class="form-group">
-
-                            <div class="input-group">
-
-                                <span class="input-group-addon"><i class="fa fa-users"></i></span>
-
-                                <select class="form-control input-lg" name="nuevoPerfil">
-
-                                    <option value="">Selecionar perfil</option>
+                                    <option value="">Selecionar categoría</option>
 
                                     <option value="Administrador">Administrador</option>
 
@@ -235,17 +221,83 @@ MODAL AGREGAR USUARIO
 
                         </div>
 
+                        <!-- ENTRADA PARA EL STOCK -->
+
+                        <div class="form-group">
+
+                            <div class="input-group">
+
+                                <span class="input-group-addon"><i class="fa fa-check"></i></span>
+
+                                <input type="number" class="form-control input-lg" min="0" name="nuevoStock" placeholder="Ingresar stock" required>
+
+                            </div>
+
+                        </div>
+
+                        <!-- ENTRADA PARA EL PRECIO DE COMPRA -->
+
+                        <div class="form-group row">
+
+                            <div class="col-xs-6 col-md-6">
+
+                                <div class="input-group">
+
+                                    <span class="input-group-addon"><i class="fa fa-arrow-up"></i></span>
+
+                                    <input type="number" class="form-control input-lg" min="0" name="nuevoPrecioCompra" placeholder="Ingresar precio de compra" required>
+
+                                </div>
+
+                            </div>
+
+                            <!-- ENTRADA PARA EL PRECIO DE VENTA -->
+
+                            <div class="col-xs-6 col-md-6">
+
+                                <div class="input-group">
+
+                                    <span class="input-group-addon"><i class="fa fa-arrow-down"></i></span>
+
+                                    <input type="number" class="form-control input-lg" min="0" name="nuevoPrecioVenta" placeholder="Ingresar precio de venta" required>
+
+                                </div>
+
+                                <br>
+
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label>
+                                            <input type="checkbox" class="minimal porcentaje" checked />
+                                            Utilizar porcentaje
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- ENTRADA PARA PORCENTAJE -->
+
+                                <div class="col-xs-6">
+                                    <div class="input-group">
+                                        <input type="number" class="form-control input-lg nuevoPorcentaje" min="0" value="40" required />
+                                        <span class="input-group-addon"><i class="fa fa-percent"></i></span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
                         <!-- ENTRADA PARA SUBIR FOTO -->
 
                         <div class="form-group">
 
-                            <div class="panel">SUBIR FOTO</div>
+                            <div class="panel">SUBIR IMAGEN</div>
 
-                            <input type="file" id="nuevaFoto" name="nuevaFoto">
+                            <input type="file" id="nuevaImagen" name="nuevaImagen">
 
-                            <p class="help-block">Peso máximo de la foto 200 MB</p>
+                            <p class="help-block">Peso máximo de la foto 2 MB</p>
 
-                            <img src="vistas/img/usuarios/default/anonymous.png" class="img-thumbnail" width="100px">
+                            <img src="vistas/img/productos/default/anonymous.png" class="img-thumbnail" width="100px">
 
                         </div>
 
@@ -261,7 +313,7 @@ MODAL AGREGAR USUARIO
 
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-                    <button type="submit" class="btn btn-primary">Guardar usuario</button>
+                    <button type="submit" class="btn btn-primary">Guardar producto</button>
 
                 </div>
 
